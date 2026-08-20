@@ -1,0 +1,46 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: var(--px) solid var(--color-green-mid);
+  border-left-width: calc(var(--px) * 2);
+  min-width: 0;
+}
+
+.unset {
+  border-color: var(--line-strong);
+  border-left-color: var(--color-accent);
+}
+
+.value {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.05rem, 3.2vw, 1.8rem);
+  color: var(--color-green-light);
+  letter-spacing: 0.02em;
+}
+
+.unset .value {
+  color: var(--text-faint);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.state {
+  font-family: var(--font-pixel);
+  font-size: 0.4rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.live {
+  color: var(--ok);
+  animation: pixelFlicker 5s steps(1) infinite;
+}
