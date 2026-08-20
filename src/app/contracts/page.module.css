@@ -1,0 +1,117 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.securityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* ---- claims ------------------------------------------------------------ */
+.claims {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.claims li {
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.32;
+  color: var(--color-eggshell);
+}
+
+.claims li::before {
+  content: '×';
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  font-family: var(--font-pixel);
+  font-size: 0.52rem;
+  color: var(--danger);
+}
+
+.claimsNote {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: var(--px) dotted var(--line-strong);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--text-faint);
+}
+
+/* ---- steps ------------------------------------------------------------- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-left: 26px;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.32;
+  color: var(--text-dim);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-family: var(--font-pixel);
+  font-size: 0.38rem;
+  color: var(--color-green-light);
+}
+
+.stepsNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: var(--px) dotted var(--color-green-mid);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--color-accent);
+}
+
+.stepsNote svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ---- cta --------------------------------------------------------------- */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .securityGrid {
+    grid-template-columns: 1fr;
+  }
+}

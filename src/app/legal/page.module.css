@@ -1,0 +1,126 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.p {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+  max-width: none;
+}
+
+.p strong {
+  color: var(--color-yolk);
+  font-weight: 400;
+}
+
+.heading {
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+  color: var(--color-accent);
+}
+
+/* ---- lists ------------------------------------------------------------- */
+.negatives,
+.duties {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.negatives li,
+.duties li {
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: var(--color-eggshell);
+}
+
+.negatives li::before {
+  content: '×';
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--danger);
+}
+
+.duties li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: var(--px);
+  height: var(--px);
+  background: var(--color-yolk);
+}
+
+/* ---- risks ------------------------------------------------------------- */
+.risks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.risks li {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 15px 16px;
+  background: rgba(169, 74, 56, 0.1);
+  border: var(--px) solid var(--line);
+  border-left-width: calc(var(--px) * 2);
+  border-left-color: var(--color-barn);
+}
+
+.riskTitle {
+  font-family: var(--font-pixel);
+  font-size: 0.44rem;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: #d9705c;
+}
+
+.riskBody {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-dim);
+}
+
+/* ---- channels ---------------------------------------------------------- */
+.channels {
+  margin-top: 12px;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+/* ---- foot -------------------------------------------------------------- */
+.foot {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--text-faint);
+  padding: 14px 16px;
+  border: var(--px) dashed var(--line-strong);
+  max-width: none;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .risks {
+    grid-template-columns: 1fr;
+  }
+}

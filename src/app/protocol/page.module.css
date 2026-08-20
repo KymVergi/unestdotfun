@@ -1,0 +1,275 @@
+/* ---- hero step nav ------------------------------------------------------ */
+.heroNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.heroNavItem {
+  font-family: var(--font-pixel);
+  font-size: 0.46rem;
+  letter-spacing: 0.06em;
+  color: var(--color-eggshell);
+  padding: 9px 11px;
+  background: rgba(0, 0, 0, 0.42);
+  border: var(--px) solid var(--line-strong);
+  transition:
+    color 100ms linear,
+    border-color 100ms linear;
+}
+
+.heroNavItem:hover {
+  color: var(--color-yolk);
+  border-color: var(--color-yolk);
+}
+
+/* ---- layout ------------------------------------------------------------ */
+.twoCol {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prose > p {
+  font-family: var(--font-body);
+  font-size: 1.22rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.prose strong {
+  color: var(--color-yolk);
+  font-weight: 400;
+}
+
+.flowCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.flowStat {
+  width: 100%;
+}
+
+/* ---- panels ------------------------------------------------------------ */
+.negatives {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.negatives li {
+  position: relative;
+  padding-left: 22px;
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.35;
+  color: var(--color-eggshell);
+}
+
+.negatives li::before {
+  content: '×';
+  position: absolute;
+  left: 4px;
+  top: -1px;
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  color: var(--danger);
+}
+
+.negativeNote {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: var(--px) dotted var(--line-strong);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-faint);
+}
+
+.goodText {
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+  max-width: none;
+}
+
+.goodText strong {
+  color: var(--ok);
+  font-weight: 400;
+}
+
+.warnPanel,
+.goodPanel {
+  width: 100%;
+}
+
+/* ---- stat row ---------------------------------------------------------- */
+.statRow {
+  margin-top: 16px;
+}
+
+/* ---- formula ----------------------------------------------------------- */
+.formulaBlock {
+  margin-top: 26px;
+  padding: 22px 20px;
+  background: var(--color-bg-sunken);
+  border: var(--px) solid var(--color-green-mid);
+}
+
+.formulaLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: var(--px) dashed var(--line-strong);
+}
+
+.formulaLine span {
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  color: var(--color-eggshell);
+  letter-spacing: 0.05em;
+}
+
+.formulaLine em {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--color-yolk);
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.compareCard {
+  padding: 14px 15px;
+  background: rgba(0, 0, 0, 0.36);
+  border: var(--px) solid var(--line);
+}
+
+.compareName {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.compareCard dl {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compareCard dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px dotted rgba(255, 241, 199, 0.14);
+  padding-bottom: 4px;
+}
+
+.compareCard dt {
+  font-family: var(--font-pixel);
+  font-size: 0.34rem;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+}
+
+.compareCard dd {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--color-eggshell);
+}
+
+.strong {
+  color: var(--ok) !important;
+}
+.weak {
+  color: var(--danger) !important;
+}
+
+.noPromise {
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--text-faint);
+}
+
+/* ---- backing examples -------------------------------------------------- */
+.backingExamples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.backingExamples li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 12px;
+  background: rgba(0, 0, 0, 0.36);
+  border: var(--px) solid var(--line-strong);
+}
+
+.beEggs {
+  font-family: var(--font-pixel);
+  font-size: 0.56rem;
+  color: var(--color-eggshell);
+}
+
+.beArrow {
+  color: var(--color-accent);
+}
+
+.beUnest {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--color-yolk);
+}
+
+/* ---- footer CTA -------------------------------------------------------- */
+.footerCta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ---- responsive -------------------------------------------------------- */
+@media (max-width: 940px) {
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .compare,
+  .backingExamples {
+    grid-template-columns: 1fr;
+  }
+}
