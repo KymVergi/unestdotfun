@@ -1,0 +1,23 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.demoNote {
+  margin-top: 16px;
+  padding: 13px 15px;
+  background: rgba(244, 201, 93, 0.08);
+  border-left: calc(var(--px) * 2) solid var(--color-yolk);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+  max-width: none;
+}
+
+.demoNote strong {
+  color: var(--color-yolk);
+  font-weight: 400;
+}

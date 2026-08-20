@@ -1,0 +1,158 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* ---- inline equation --------------------------------------------------- */
+.equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.42);
+  border: var(--px) dashed var(--line-strong);
+}
+
+.equation span {
+  font-family: var(--font-pixel);
+  font-size: 0.56rem;
+  color: var(--color-eggshell);
+}
+
+.equation em {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.fine {
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.32;
+  color: var(--text-faint);
+}
+
+/* ---- reward formula ---------------------------------------------------- */
+.formula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 14px;
+  background: rgba(196, 111, 208, 0.08);
+  border: var(--px) solid rgba(196, 111, 208, 0.32);
+}
+
+.formulaOut {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--rarity-mythic);
+}
+
+.formulaEq,
+.formulaOp {
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  color: var(--color-yolk);
+}
+
+.formulaIn {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--color-eggshell);
+}
+
+.miniList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.miniList li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--text-dim);
+}
+
+.miniList li::before {
+  content: '›';
+  position: absolute;
+  left: 2px;
+  color: var(--color-accent);
+}
+
+/* ---- buyback ----------------------------------------------------------- */
+.buyback {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ---- boundaries -------------------------------------------------------- */
+.boundaries {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.boundaries li {
+  padding: 15px 16px;
+  background: rgba(0, 0, 0, 0.34);
+  border: var(--px) solid var(--line);
+  border-left-width: calc(var(--px) * 2);
+  border-left-color: var(--color-barn);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.35;
+  color: var(--text-dim);
+}
+
+.boundaries b {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 0.44rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--color-eggshell);
+  margin-bottom: 6px;
+}
+
+/* ---- cta --------------------------------------------------------------- */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+@media (max-width: 940px) {
+  .grid,
+  .boundaries {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .buyback {
+    grid-template-columns: 1fr;
+  }
+}
