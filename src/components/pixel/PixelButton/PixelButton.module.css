@@ -1,0 +1,103 @@
+.btn {
+  --btn-face: var(--color-yolk);
+  --btn-edge: #8b5f1c;
+  --btn-ink: var(--color-bg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-pixel);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--btn-ink);
+  background: var(--btn-face);
+  border: var(--px) solid var(--color-bg-sunken);
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 0 var(--btn-edge),
+    inset var(--px) var(--px) 0 0 rgba(255, 255, 255, 0.35),
+    0 var(--px) 0 0 rgba(0, 0, 0, 0.6);
+  transition:
+    transform 80ms steps(2),
+    box-shadow 80ms steps(2),
+    filter 120ms linear;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  color: var(--btn-ink);
+}
+
+.btn:active {
+  transform: translateY(var(--px));
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 0 var(--btn-edge),
+    inset var(--px) var(--px) 0 0 rgba(255, 255, 255, 0.2),
+    0 0 0 0 rgba(0, 0, 0, 0.6);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.75) brightness(0.7);
+}
+
+/* ---- variants ---------------------------------------------------------- */
+.primary {
+  --btn-face: var(--color-yolk);
+  --btn-edge: #8b5f1c;
+  --btn-ink: #241a06;
+}
+
+.secondary {
+  --btn-face: var(--color-wood);
+  --btn-edge: #3a2214;
+  --btn-ink: var(--color-eggshell);
+}
+
+.ghost {
+  --btn-face: transparent;
+  --btn-edge: var(--line-strong);
+  --btn-ink: var(--color-eggshell);
+  border-color: var(--line-strong);
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 0 rgba(0, 0, 0, 0.4),
+    0 var(--px) 0 0 rgba(0, 0, 0, 0.5);
+}
+.ghost:hover {
+  background: rgba(244, 201, 93, 0.1);
+  border-color: var(--color-yolk);
+}
+
+.danger {
+  --btn-face: var(--color-barn);
+  --btn-edge: #5e2418;
+  --btn-ink: var(--color-eggshell);
+}
+
+/* ---- sizes ------------------------------------------------------------- */
+.sm {
+  font-size: 0.52rem;
+  padding: 8px 10px;
+}
+.md {
+  font-size: 0.62rem;
+  padding: 12px 16px;
+}
+.lg {
+  font-size: 0.78rem;
+  padding: 16px 24px;
+}
+
+.full {
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .lg {
+    font-size: 0.66rem;
+    padding: 14px 16px;
+  }
+}

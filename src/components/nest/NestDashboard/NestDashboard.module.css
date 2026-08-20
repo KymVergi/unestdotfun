@@ -1,0 +1,222 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---- gates ------------------------------------------------------------- */
+.gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 54px 24px;
+  background:
+    radial-gradient(70% 70% at 50% 0%, rgba(244, 201, 93, 0.07), transparent 62%),
+    var(--color-bg-sunken);
+  border: var(--px) solid var(--line-strong);
+}
+
+.gateWarn {
+  border-color: var(--color-barn);
+}
+
+.gateIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  color: var(--color-yolk);
+  border: var(--px) solid var(--color-yolk);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.gateWarn .gateIcon {
+  color: var(--color-barn);
+  border-color: var(--color-barn);
+}
+
+.gateTitle {
+  font-size: clamp(0.9rem, 3.2vw, 1.3rem);
+  margin: 0;
+}
+
+.gateText {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+  max-width: 54ch;
+}
+
+.gateLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* ---- status ------------------------------------------------------------ */
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stats {
+  width: 100%;
+}
+
+/* ---- wallet row -------------------------------------------------------- */
+.walletRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 190px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--color-bg-panel);
+  border: var(--px) solid var(--line-strong);
+}
+
+.walletLabel {
+  font-family: var(--font-pixel);
+  font-size: 0.4rem;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+}
+
+.walletValue {
+  font-family: var(--font-pixel);
+  font-size: 0.66rem;
+  color: var(--color-eggshell);
+}
+
+/* ---- grid -------------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.effNote {
+  font-family: var(--font-pixel);
+  font-size: 0.3rem;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  color: var(--color-yolk);
+  text-align: center;
+  padding-top: 4px;
+}
+
+.btnCost {
+  font-size: 0.82em;
+  opacity: 0.7;
+  margin-left: 6px;
+}
+
+.hint {
+  font-family: var(--font-pixel);
+  font-size: 0.32rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+/* ---- states ------------------------------------------------------------ */
+.loading {
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  border: var(--px) dashed var(--line-strong);
+  animation: pixelFlicker 2.4s steps(1) infinite;
+}
+
+.emptyNest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 44px 22px;
+  color: var(--text-faint);
+  background: rgba(0, 0, 0, 0.3);
+  border: var(--px) dashed var(--line-strong);
+}
+
+.emptyNest h3 {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--color-eggshell);
+}
+
+.emptyNest p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+  max-width: 56ch;
+}
+
+.underBacked {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 13px 15px;
+  background: rgba(169, 74, 56, 0.14);
+  border: var(--px) solid var(--color-barn);
+  border-left-width: calc(var(--px) * 2);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.4;
+  color: #e8cdc2;
+  max-width: none;
+}
+
+.underBacked svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--color-barn);
+}
+
+/* ---- foot -------------------------------------------------------------- */
+.footNote {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--text-faint);
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: calc(var(--px) * 2) solid var(--color-green-mid);
+  max-width: none;
+}
+
+.footNote strong {
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .walletRow {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 10px;
+  }
+  .walletRow > *:last-child {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .gate {
+    padding: 36px 16px;
+  }
+}

@@ -1,0 +1,130 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 18px;
+  background: var(--color-bg-sunken);
+  border: var(--px) solid var(--line-strong);
+}
+
+/* ---- base -------------------------------------------------------------- */
+.base {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  border-bottom: var(--px) dashed var(--line-strong);
+}
+
+.baseLabel {
+  font-family: var(--font-pixel);
+  font-size: 0.44rem;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+}
+
+.baseValue {
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  color: var(--color-eggshell);
+}
+
+.baseNote {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-faint);
+}
+
+/* ---- rows -------------------------------------------------------------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 92px 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-family: var(--font-pixel);
+  font-size: 0.42rem;
+  letter-spacing: 0.06em;
+  color: var(--c);
+}
+
+.bonus {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  color: var(--text-faint);
+  text-align: right;
+}
+
+.track {
+  position: relative;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  border: var(--px) solid var(--line);
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--c);
+  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.total {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--color-eggshell);
+  text-align: right;
+}
+
+/* ---- cap --------------------------------------------------------------- */
+.cap {
+  padding-top: 14px;
+  border-top: var(--px) dashed var(--line-strong);
+}
+
+.capRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.capLabel {
+  font-family: var(--font-pixel);
+  font-size: 0.44rem;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+}
+
+.capValue {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  color: var(--color-yolk);
+}
+
+.capNote {
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-dim);
+}
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 74px 36px minmax(0, 1fr) 38px;
+    gap: 7px;
+  }
+  .name {
+    font-size: 0.34rem;
+  }
+}

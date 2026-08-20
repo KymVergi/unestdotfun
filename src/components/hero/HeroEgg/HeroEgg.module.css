@@ -1,0 +1,135 @@
+.stage {
+  position: relative;
+  width: min(340px, 74vw);
+  aspect-ratio: 3 / 4;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  outline-offset: 8px;
+  cursor: pointer;
+}
+
+.halo {
+  position: absolute;
+  inset: 4% 0 12%;
+  background: radial-gradient(circle at 50% 42%, rgba(244, 201, 93, 0.24) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.eggHolder {
+  position: relative;
+  width: 74%;
+  aspect-ratio: 16 / 20;
+  transform-origin: 50% 92%;
+  animation: eggWobble 5.5s steps(6) infinite;
+}
+
+.stage:hover .eggHolder,
+.stage:focus-visible .eggHolder {
+  animation: none;
+}
+
+.shell {
+  position: absolute;
+  inset: 0;
+  display: block;
+  filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.45));
+}
+
+.inside {
+  position: absolute;
+  inset: 22% 18% 14%;
+  display: block;
+  opacity: 0;
+  transform: translateY(6px) scale(0.9);
+  transition:
+    opacity 180ms steps(2),
+    transform 180ms steps(2);
+}
+
+.insideOn {
+  opacity: 0.85;
+  transform: translateY(0) scale(1);
+}
+
+.nest {
+  position: relative;
+  width: 92%;
+  margin-top: -6%;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.5));
+}
+
+/* ---- particles --------------------------------------------------------- */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particles i {
+  position: absolute;
+  bottom: 18%;
+  width: 3px;
+  height: 3px;
+  background: var(--color-yolk);
+  opacity: 0;
+  animation: sparkFloat 4.6s steps(10) infinite;
+}
+
+/* ---- tooltip ----------------------------------------------------------- */
+.tooltip {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -6px);
+  padding: 8px 12px;
+  font-family: var(--font-pixel);
+  font-size: 0.46rem;
+  letter-spacing: 0.08em;
+  color: var(--color-bg);
+  background: var(--color-eggshell);
+  border: var(--px) solid var(--color-wood-dark);
+  box-shadow: 0 var(--px) 0 0 rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 140ms steps(2),
+    transform 140ms steps(2);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--px) * -2);
+  width: var(--px);
+  height: var(--px);
+  margin-left: calc(var(--px) * -0.5);
+  background: var(--color-eggshell);
+}
+
+.tooltipOn {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 520px) {
+  .stage {
+    width: min(240px, 68vw);
+  }
+  .tooltip {
+    font-size: 0.38rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eggHolder,
+  .particles i {
+    animation: none !important;
+  }
+}
